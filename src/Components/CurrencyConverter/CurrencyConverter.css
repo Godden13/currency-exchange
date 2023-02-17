@@ -1,0 +1,62 @@
+* {
+  margin: 1vw;
+  padding: 0;
+}
+
+.converter {
+  display: flex;
+  gap: 1vw;
+  font-size: 2vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.amount {
+  display: grid;
+}
+
+.converter_input {
+  height: 5vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #a9a4a4;
+}
+
+#fontAw {
+  border: 1px solid #a9a4a4;
+  border-radius: 100%;
+  padding: 10%;
+  color: #a9a4a4;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnElt {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+#convertBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vw;
+  width: 5vw;
+  color: #fff;
+  background-color: #158715;
+  border: none;
+  border-radius: 20px;
+  font-size: 1vw;
+}
+
+#convertBtn text {
+  max-width: 1px;
+}

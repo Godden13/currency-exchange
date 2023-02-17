@@ -1,0 +1,41 @@
+.currencyCard {
+  width: 90%;
+  height: 20vh;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  border: 2px solid #f2f3f4;
+  overflow: scroll;
+  margin-top: 2rem;
+  box-shadow: #64646f33 0px 7px 10px 0px;
+}
+
+.currencyCard_container {
+  display: flex;
+}
+
+.currencyCard_part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 80%;
+  height: 10vh;
+  width: 15rem;
+  border-radius: 30px;
+  padding: 1%;
+  margin: 2%;
+  gap: 0.5vw;
+  /* box-shadow: #64646f33 0px 7px 29px 0px; */
+  overflow: auto;
+  background-color: #f2f3f4;
+}
+
+.currencyCard_part h3,
+h4 {
+  margin: 0;
+}
+
+.currencyCard_part h3 {
+  font-size: 1.3vw;
+}

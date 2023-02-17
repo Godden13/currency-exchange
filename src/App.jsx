@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
+import { useState, useEffect, useMemo } from 'react';
 import './App.css';
+import CurrencyContext from './Components/Functionality/CurrencyContext';
+import Wallet from './Components/Wallet/Wallet';
 
 function App() {
+  const [rates, setRates] = useState({});
+  const [wallets, setWallets] = useState({
+    USD: {
+      sign: 'USD',
+      balance: 10000,
+    },
+    EUR: {
+      sign: 'EUR',
+      balance: 10000,
+    },
+    XAF: {
+      sign: 'XAF',
+      balance: 10000,
+    },
+  });
+
+  const values = useMemo(
+    () => ({ rates, wallets, setWallets }),
+    [wallets, rates, setWallets]
+  );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const options = {
+        method: 'GET',
+        headers: { accept: 'application/json' },
+      };
+
+      await fetch(
+        'https://api.fastforex.io/fetch-all?from=USD&api_key=fb64a9413f-a15c2b8ff9-rq27fy',
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setRates(response.results))
+        .catch((err) => console.error(err));
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CurrencyContext.Provider value={values}>
+        <Wallet />
+      </CurrencyContext.Provider>
     </div>
   );
 }
