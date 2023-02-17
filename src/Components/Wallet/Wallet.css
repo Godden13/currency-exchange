@@ -1,0 +1,15 @@
+.wallet_header {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  height: 50vh;
+  padding: 2%;
+  box-shadow: #64646f33 0px 7px 10px 0px;
+  border-radius: 10px;
+}
+
+.wallet_header::target-text {
+  margin: 0;
+}
