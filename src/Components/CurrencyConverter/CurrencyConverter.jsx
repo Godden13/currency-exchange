@@ -69,7 +69,7 @@ export default function CurrencyConverter() {
               setFrom(e.target.value);
             }}
           >
-            <option disabled selected value>
+            <option disabled selected defaultValue>
               Select Currency
             </option>
             {walletNames.map((wallet) => {
@@ -93,7 +93,7 @@ export default function CurrencyConverter() {
             value={to}
             onChange={(e) => setTo(e.target.value)}
           >
-            <option disabled selected value>
+            <option disabled selected defaultValue>
               Select Currency
             </option>
             {walletNames.map((wallet) => {

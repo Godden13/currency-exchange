@@ -35,7 +35,7 @@ function App() {
       };
 
       await fetch(
-        'https://api.fastforex.io/fetch-all?from=USD&api_key=fb64a9413f-a15c2b8ff9-rq27fy',
+        'https://api.fastforex.io/fetch-all?from=USD&api_key=83fc203d94-0d03e481a1-rqkck6',
         options
       )
         .then((response) => response.json())

@@ -20,7 +20,7 @@ export default function AddCurrency() {
         [newWallet]: {
           sign: newWallet,
           balance:
-            (oldWallet[newWallet].balance || 0) + parseInt(newAmount, 10),
+            (oldWallet[newWallet]?.balance || 0) + parseInt(newAmount, 10),
         },
       };
     });
