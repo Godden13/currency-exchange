@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useContext } from 'react';
@@ -12,7 +13,7 @@ export default function AddCurrency() {
   const toggleAdd = () => {
     setAdd(!add);
   };
-
+  // console.log(realRates);
   const addWallet = (newWallet, newAmount) => {
     setWallets((oldWallet) => {
       return {
@@ -49,7 +50,7 @@ export default function AddCurrency() {
                   <option selected disabled value>
                     Select Currency
                   </option>
-                  {realRates.map((realRate) => {
+                  {realRates?.map((realRate) => {
                     return (
                       <option value={realRate} key={realRate}>
                         {realRate}

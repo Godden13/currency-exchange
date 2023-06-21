@@ -27,20 +27,26 @@ function App() {
     [wallets, rates, setWallets]
   );
 
-  useEffect(() => {
+  // Fetch the api from apilayer.com
+
+  useEffect(async () => {
     const fetchData = async () => {
-      const options = {
+      const myHeaders = new Headers();
+      myHeaders.append('apikey', '509oS1FzzvlWgMtCfc0aLcUPNWisEsqe');
+
+      const requestOptions = {
         method: 'GET',
-        headers: { accept: 'application/json' },
+        redirect: 'follow',
+        headers: myHeaders,
       };
 
       await fetch(
-        'https://api.fastforex.io/fetch-all?from=USD&api_key=83fc203d94-0d03e481a1-rqkck6',
-        options
+        'https://api.apilayer.com/fixer/latest?base=usd',
+        requestOptions
       )
         .then((response) => response.json())
-        .then((response) => setRates(response.results))
-        .catch((err) => console.error(err));
+        .then((result) => setRates(result.rates))
+        .catch((error) => console.log('error', error));
     };
 
     fetchData();

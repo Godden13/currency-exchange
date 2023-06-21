@@ -111,12 +111,6 @@ export default function CurrencyConverter() {
           Convert
         </button>
       </div>
-      {/* <div className="convertedAmount">
-        <p>
-          {wallets[to].balance}
-          {wallets[to].sign}
-        </p>
-      </div> */}
     </form>
   );
 }
