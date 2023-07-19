@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 import { useState, useEffect, useMemo } from 'react';
 import './App.css';
 import CurrencyContext from './Components/Functionality/CurrencyContext';
@@ -46,6 +44,7 @@ function App() {
       )
         .then((response) => response.json())
         .then((result) => setRates(result.rates))
+        // eslint-disable-next-line no-console
         .catch((error) => console.log('error', error));
     };
 
