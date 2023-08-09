@@ -107,7 +107,7 @@ export default function CurrencyConverter() {
       </div>
       <div className="btnElt">
         <button type="button" id="convertBtn" onClick={convert}>
-          Convert
+          Transfer
         </button>
       </div>
     </form>

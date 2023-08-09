@@ -18,7 +18,7 @@ export default function Wallet() {
         (wallet.balance * rates[defaultWallet]) / rates[wallet.sign];
     });
     return newBalance;
-  }, [wallets, rates]);
+  }, [wallets, rates, defaultWallet]);
 
   const defaultCurrency = (e) => {
     setDefaultWallet(e.target.value);
