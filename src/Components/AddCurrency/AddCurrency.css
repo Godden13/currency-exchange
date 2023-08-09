@@ -1,0 +1,67 @@
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0%;
+  right: 0;
+  bottom: 0%;
+  position: fixed;
+  color: #fff;
+  background: rgba(49, 49, 49, 0.8);
+  margin: auto;
+}
+
+.addCurrency {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+  border-radius: 20px;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3vw;
+  width: 5vw;
+  color: #fff;
+  background-color: #158715;
+  border: none;
+  border-radius: 20px;
+  font-size: 1vw;
+  padding: 5px;
+}
+
+.overlay {
+  width: 50vw;
+  height: 50vh;
+  margin: auto;
+}
+
+.rr {
+  display: flex;
+  flex-direction: column;
+}
+
+.rr button {
+  height: 1.5vw;
+  width: 3vw;
+}
+
+.inputs {
+  display: flex;
+  gap: none;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  gap: 1vw;
+}
+
+#amount {
+  height: 5vh;
+  width: 20vw;
+  border-radius: 5px;
+}
