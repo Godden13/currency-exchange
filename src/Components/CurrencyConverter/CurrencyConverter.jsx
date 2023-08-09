@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import './CurrencyConverter.css';
 import { useContext, useState } from 'react';
 import CurrencyContext from '../Functionality/CurrencyContext';
@@ -16,6 +15,7 @@ export default function CurrencyConverter() {
 
   function convert() {
     if (convertAmount > wallets[from].balance) {
+      // eslint-disable-next-line no-alert
       alert('Balance is insufficient');
     } else {
       setWallets((oldWallet) => {
@@ -50,7 +50,6 @@ export default function CurrencyConverter() {
             type="text"
             placeholder="How much do you want to convert"
             className="converter_input"
-            value={convertAmount}
             onChange={(e) => {
               e.preventDefault();
               setConvertAmount(e.target.value);
@@ -58,7 +57,7 @@ export default function CurrencyConverter() {
           />
         </div>
         <div className="from">
-          <h5>From</h5>
+          <h5 key={walletNames?.sign}>From</h5>
           <select
             name="Currencies"
             id="currencyFrom"

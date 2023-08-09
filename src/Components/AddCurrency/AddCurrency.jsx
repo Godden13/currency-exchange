@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useContext } from 'react';
 import CurrencyContext from '../Functionality/CurrencyContext';
 import './AddCurrency.css';
@@ -13,7 +10,6 @@ export default function AddCurrency() {
   const toggleAdd = () => {
     setAdd(!add);
   };
-  // console.log(realRates);
   const addWallet = (newWallet, newAmount) => {
     setWallets((oldWallet) => {
       return {

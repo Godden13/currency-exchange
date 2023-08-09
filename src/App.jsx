@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState, useEffect, useMemo } from 'react';
 import './App.css';
 import CurrencyContext from './Components/Functionality/CurrencyContext';
@@ -8,15 +9,15 @@ function App() {
   const [wallets, setWallets] = useState({
     USD: {
       sign: 'USD',
-      balance: 10000,
+      balance: 0,
     },
     EUR: {
       sign: 'EUR',
-      balance: 10000,
+      balance: 0,
     },
     XAF: {
       sign: 'XAF',
-      balance: 10000,
+      balance: 0,
     },
   });
 
@@ -43,9 +44,8 @@ function App() {
         requestOptions
       )
         .then((response) => response.json())
-        .then((result) => setRates(result.rates))
-        // eslint-disable-next-line no-console
-        .catch((error) => console.log('error', error));
+        .then((result) => setRates(result.rates));
+      // .catch((error) => console.log('error', error));
     };
 
     fetchData();
