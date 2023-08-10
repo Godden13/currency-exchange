@@ -1,5 +1,5 @@
 import { useState, useContext, useMemo } from 'react';
-import { FaSun } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import AddCurrency from '../AddCurrency/AddCurrency';
 import CurrencyCard from '../CurrencyCards/CurrencyCard';
 import CurrencyConverter from '../CurrencyConverter/CurrencyConverter';
@@ -10,6 +10,7 @@ export default function Wallet() {
   const { rates, wallets } = useContext(CurrencyContext);
   const walletNames = Object.keys(wallets);
   const [defaultWallet, setDefaultWallet] = useState(wallets.USD.sign);
+  const [darkMode, setDarkMode] = useState(false);
 
   const mainBalance = useMemo(() => {
     let newBalance = 0;
@@ -20,10 +21,6 @@ export default function Wallet() {
     return newBalance;
   }, [wallets, rates, defaultWallet]);
 
-  const defaultCurrency = (e) => {
-    setDefaultWallet(e.target.value);
-  };
-
   function format(num) {
     return Math.ceil(num);
   }
@@ -33,14 +30,30 @@ export default function Wallet() {
       <header className="head">
         <span />
         <h1>Basic Wallet</h1>
-        <FaSun className="theme-icon" />
+        {darkMode ? (
+          <FaSun
+            className="theme-icon-sun"
+            title="switch to  mode"
+            onClick={() => {
+              setDarkMode(!darkMode);
+            }}
+          />
+        ) : (
+          <FaMoon
+            className="theme-icon-moon"
+            onClick={() => {
+              setDarkMode(!darkMode);
+            }}
+            title="switch to Dark mode"
+          />
+        )}
       </header>
       <div className="wallet_header">
         <h3>
           {format(mainBalance)}
           <select
             onChange={(e) => {
-              defaultCurrency(e);
+              setDefaultWallet(e.target.value);
             }}
           >
             {walletNames.map((def) => (
