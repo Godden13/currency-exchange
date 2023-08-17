@@ -6,6 +6,7 @@ export default function CurrencyConverter() {
   const [convertAmount, setConvertAmount] = useState(Number);
   const [from, setFrom] = useState(undefined);
   const [to, setTo] = useState(undefined);
+  const [value, setValue] = useState('');
   const { rates, wallets, setWallets } = useContext(CurrencyContext);
   const walletNames = Object.keys(wallets);
 
@@ -14,9 +15,12 @@ export default function CurrencyConverter() {
   }
 
   function convert() {
+    setValue(format((convertAmount * rates[to]) / rates[from]));
+  }
+
+  function transfer() {
     if (convertAmount > wallets[from].balance) {
-      // eslint-disable-next-line no-alert
-      alert('Balance is insufficient');
+      setValue('Balance is too low to transfer');
     } else {
       setWallets((oldWallet) => {
         return {
@@ -107,9 +111,13 @@ export default function CurrencyConverter() {
       </div>
       <div className="btnElt">
         <button type="button" id="convertBtn" onClick={convert}>
-          Transfer
+          convert
+        </button>
+        <button type="button" id="transferBtn" onClick={transfer}>
+          transfer
         </button>
       </div>
+      <div className="displayConverted">{value}</div>
     </form>
   );
 }
