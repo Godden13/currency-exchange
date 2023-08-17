@@ -56,6 +56,31 @@
   font-size: 1vw;
 }
 
+#transferBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vw;
+  width: 5vw;
+  color: #fff;
+  background-color: #158715;
+  border: none;
+  border-radius: 20px;
+  font-size: 1vw;
+}
+
 #convertBtn text {
   max-width: 1px;
+}
+
+@media only screen and (max-width: 720px) {
+  .currencyConverter_container {
+    height: fit-content;
+    width: 100vw;
+    display: grid;
+  }
+  .converter {
+    display: flex;
+    flex-direction: column;
+  }
 }

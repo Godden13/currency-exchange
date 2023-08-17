@@ -39,3 +39,15 @@ h4 {
 .currencyCard_part h3 {
   font-size: 1.3vw;
 }
+
+@media only screen and (max-width: 720px) {
+  .currencyCard {
+    display: grid;
+    height: fit-content;
+    width: 300px;
+    margin: 10px;
+  }
+  .currencyCard_part {
+    font-size: 30px;
+  }
+}
